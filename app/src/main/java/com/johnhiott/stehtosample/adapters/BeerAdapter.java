@@ -36,7 +36,6 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
 
     public BeerAdapter(ArrayList<Beer> beers) {
         mBeers = beers;
-        beers.get(2).save();
     }
 
     @Override
@@ -55,6 +54,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
                     .load(beer.getLabels().getLarge())
                     .fit()
                     .noFade()
+                    .placeholder(holder.mContext.getDrawable(R.drawable.beer_head_foam))
                     .into(holder.mBeerLabel);
         }else {
             holder.mBeerLabel.setImageDrawable(holder.mContext.getDrawable(R.drawable.beer_head_foam));

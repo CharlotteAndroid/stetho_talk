@@ -1,17 +1,15 @@
 package com.johnhiott.stehtosample;
 
-import android.support.annotation.UiThread;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.facebook.stetho.okhttp.StethoInterceptor;
@@ -24,11 +22,9 @@ import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -56,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
         mOkHttpClient = new OkHttpClient();
         mOkHttpClient.networkInterceptors().add(new StethoInterceptor());
         getBrewery();
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("THIS", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("call", "foo");
+        editor.commit();
 
     }
 

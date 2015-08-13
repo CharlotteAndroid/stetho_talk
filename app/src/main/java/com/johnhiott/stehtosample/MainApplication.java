@@ -51,7 +51,6 @@ public class MainApplication extends Application {
 
     }
 
-
     class MyDumperPluginsProvider implements DumperPluginsProvider {
         @Override
         public Iterable<DumperPlugin> get() {

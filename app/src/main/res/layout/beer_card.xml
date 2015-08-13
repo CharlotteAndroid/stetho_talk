@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/beer_label"
             android:src="@drawable/beer_head_foam"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"/>
 
         <TextView
